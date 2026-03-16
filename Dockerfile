@@ -1,5 +1,6 @@
 FROM python:3.8-slim
-RUN pip install awscli
+RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
+RUN pip install awscli ultralytics
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
