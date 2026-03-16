@@ -28,7 +28,11 @@ sudo usermod -aG docker jenkins
 
 newgrp docker
 
-sudo apt install awscli -y
+sudo apt install unzip -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+#sudo apt install awscli -y
 
 sudo usermod -a -G docker jenkins
 
@@ -45,3 +49,5 @@ aws configure
 ## For getting the admin password for jenkins
 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
